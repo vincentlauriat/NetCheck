@@ -16,7 +16,7 @@ final class AppSettings: @unchecked Sendable {
     }
 
     var geigerSoundEnabled: Bool {
-        get { UserDefaults.standard.bool(forKey: "geigerSoundEnabled") || true }
+        get { UserDefaults.standard.object(forKey: "geigerSoundEnabled") as? Bool ?? true }
         set { UserDefaults.standard.set(newValue, forKey: "geigerSoundEnabled") }
     }
 
