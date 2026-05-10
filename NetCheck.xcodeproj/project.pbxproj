@@ -7,16 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		067E775E9B96804CB3CFEF33 /* TracerouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601DBE398C833B053E84875A /* TracerouteTests.swift */; };
+		0D9B44B8DDDA16EECCD8B4C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D65D49EC79AD2795740F038 /* AppDelegate.swift */; };
+		0EDDDC54D725124BE5C44889 /* GlassPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59410F3D27FC3F6E9A148A3C /* GlassPanelView.swift */; };
+		26DB1531049748A1EC3542D9 /* GeigerSoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A4CCBB64143CB3013CF695 /* GeigerSoundEngine.swift */; };
+		3049A21296A9F0965DE92F8E /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F69B0E1F06DB8E7FDBDEFB /* StatusBadge.swift */; };
+		387A6A1CDF8F0ECFD431FD4C /* UsageQualityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFDBA690CE9F01A1DABF0D2 /* UsageQualityService.swift */; };
+		40C10C39087BF75477586BF8 /* UsageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1EA0282872732E76D0F314 /* UsageModels.swift */; };
 		41498935495BFEA85E8C379F /* NetCheckCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 459FA839B56AED7F00A701FD /* NetCheckCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4549BA1106C1D5D71126EA87 /* OrganicBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A75F47CF33BC8607EAF513 /* OrganicBubble.swift */; };
 		4571812589BE85A7F5F72C98 /* NetCheckCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459FA839B56AED7F00A701FD /* NetCheckCore.framework */; };
+		4A792C433C1191661AF3C14F /* HopListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B143DCEA0747822939248113 /* HopListView.swift */; };
+		4CAB7797DDA1DAA1E0F3C63B /* SpeedTestServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71BED3EEA509F2AD46EF9E4 /* SpeedTestServiceTests.swift */; };
+		4D8998F1A14D30399676F216 /* UsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA116978946806DB017AF25 /* UsageView.swift */; };
+		54B893FCB301EEC085C2D9A5 /* WiFiScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F46DBA99DFA92C12E9E0C2 /* WiFiScanner.swift */; };
+		569FA45938BFE0BE189F58F9 /* TracerouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B18DF1C13AF28D63974259 /* TracerouteViewModel.swift */; };
+		5F1B6C4BA22EFCE93DF55AD6 /* SpeedTestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575AA1E54F853D3ED775A84A /* SpeedTestService.swift */; };
 		60BB5CE3D6556F948626B3F7 /* NetCheckCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 459FA839B56AED7F00A701FD /* NetCheckCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		61AC91CE4A4B3EDF0D5FE03A /* NetCheckCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459FA839B56AED7F00A701FD /* NetCheckCore.framework */; };
 		647F44C8B7E8C167BFBCAC32 /* NetCheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944A4FA2D732BBF1AF5E2388 /* NetCheckApp.swift */; };
+		6FA14C67DE55ED8A56E7C4C0 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4CBB6B58E0865BE8FBBF07 /* StatusMenuController.swift */; };
+		7606284DE92DC6B876706B19 /* SpeedTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AC2AD717B5B7003CD69A6D /* SpeedTestView.swift */; };
+		80B649CEB3FEE1B56F25DF61 /* WiFiFinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DA6293A313D253EC6E14FE /* WiFiFinderView.swift */; };
+		82D2B429E84B158D21298E1F /* SpeedTestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338B59C8F9B008263E7D0B85 /* SpeedTestModels.swift */; };
+		88EC9BDB74D2B0301BAC882E /* ConnectivityMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AB8E3B3AE6EA7AB0433130 /* ConnectivityMonitorTests.swift */; };
+		8A200242FD2632EDCDE47574 /* TracerouteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6DA99F79D226DFBDE7B1B7 /* TracerouteService.swift */; };
+		92FEBF2FF3B48CD73728C5C3 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B654DA7A977D3DFD7DF9692A /* AppSettings.swift */; };
+		A0E0C7E542D17F2FD22D7D90 /* StatusMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773977C2F0DA8B3D4DCF6C5 /* StatusMenuView.swift */; };
+		A764D92671358CD66D3127CA /* UsageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B47342AC5551664211C91E /* UsageTests.swift */; };
+		A7A013BDF8EDE703FA064C22 /* WiFiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDD0763C73BB6661B24F7E /* WiFiModels.swift */; };
+		AA787B5055A314CD30CA1BE4 /* GeoIPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0638B301B333BC1E6D20375B /* GeoIPService.swift */; };
+		BE1FF428BBFD7FFE796F044F /* GlobeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E19540AFCA8C25F77D4DC7 /* GlobeMapView.swift */; };
+		C32AFF92870861CE909D501D /* TracerouteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07F83851D50322E7D201C85 /* TracerouteModels.swift */; };
+		C369372512180F29AB626BE7 /* SpeedGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EDB161F3484004387B7014 /* SpeedGauge.swift */; };
+		C55B083789D4AFADF9A72AFD /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD019B1E6508FD1064160E3 /* PreferencesView.swift */; };
 		CA0F0DFC7952BD9A64F92040 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 1188AFDFAA6ED97CA879B210 /* Sparkle */; };
+		CAEAB2FEE9EF240103C0701C /* ConnectivityMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C501F163CEFC3AFB49CB9C /* ConnectivityMonitor.swift */; };
 		CB364B25CA055A9B7785777D /* NetCheckUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF65026760A54107A3CF82 /* NetCheckUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CBC2436F66BF95B137F90AA3 /* ConnectivityStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9908179B55F0FE43469AD5D1 /* ConnectivityStatus.swift */; };
+		D9CCF1C3F8618DFF75E1D7D1 /* WiFiScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D885B115313D1E01A9FAE4B /* WiFiScannerTests.swift */; };
+		DEF3E4ECC8A526CA4A8B137D /* ModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE92FBE966FA4868F793BEE /* ModelsTests.swift */; };
 		E5B9E9D04AA531864D62C57A /* NetCheckUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CF65026760A54107A3CF82 /* NetCheckUI.framework */; };
 		E7FA1C75EE825FDCDC54049B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0E2924612A1A3E0E5643AAD /* Assets.xcassets */; };
 		EC5F4DA6E78C9E4101A0639E /* NetCheckCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459FA839B56AED7F00A701FD /* NetCheckCore.framework */; };
+		EC9048974E50A6D452F20738 /* SpeedTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6406050BB8394548617026DB /* SpeedTestViewModel.swift */; };
+		EF34918CE6C1A2986129BDD6 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6004BF336E05C4D5404F0BC1 /* WindowManager.swift */; };
+		F005BAFA84774BA7F20AD901 /* TracerouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47854FD72E22013F774138B3 /* TracerouteView.swift */; };
+		F406B1A12DDBC9816B4EFF50 /* PingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A8801010D1DA3730ECD051 /* PingService.swift */; };
+		F588CF772348038B2352CBF2 /* UsageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46978C4A89DBA797F3DB983 /* UsageViewModel.swift */; };
+		FA8292B955962E00F7685F55 /* ConcentricWaves.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61F26BB27EEDB5944EA061F /* ConcentricWaves.swift */; };
+		FDE2724F9744CD44DB827117 /* WiFiFinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8024B3A7431C1A342AE853CC /* WiFiFinderViewModel.swift */; };
+		FEF77C31FA8D5260A0D3E6B6 /* FeatureWindowBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E63E005E0A00D21B3F9DFF /* FeatureWindowBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,19 +118,61 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0638B301B333BC1E6D20375B /* GeoIPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoIPService.swift; sourceTree = "<group>"; };
 		073F59EFC8E041C38D9DDA70 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		0F52FB105C115A4A8FCE9333 /* NetCheckCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetCheckCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B4CBB6B58E0865BE8FBBF07 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		1CD019B1E6508FD1064160E3 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		203C1F97C81B38B1866D8E51 /* NetCheck.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetCheck.entitlements; sourceTree = "<group>"; };
+		20F69B0E1F06DB8E7FDBDEFB /* StatusBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
+		21AC2AD717B5B7003CD69A6D /* SpeedTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestView.swift; sourceTree = "<group>"; };
 		22CF65026760A54107A3CF82 /* NetCheckUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetCheckUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25A8801010D1DA3730ECD051 /* PingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingService.swift; sourceTree = "<group>"; };
+		2A10CD8D09FF5BFF7A1C7438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2C915C0786B520966B97526D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2D65D49EC79AD2795740F038 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		338B59C8F9B008263E7D0B85 /* SpeedTestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestModels.swift; sourceTree = "<group>"; };
+		36A4CCBB64143CB3013CF695 /* GeigerSoundEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeigerSoundEngine.swift; sourceTree = "<group>"; };
+		39C501F163CEFC3AFB49CB9C /* ConnectivityMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityMonitor.swift; sourceTree = "<group>"; };
+		3A1EA0282872732E76D0F314 /* UsageModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageModels.swift; sourceTree = "<group>"; };
 		3DA4E949B1439F8ABFCBA72A /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		3EE92FBE966FA4868F793BEE /* ModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTests.swift; sourceTree = "<group>"; };
+		43A75F47CF33BC8607EAF513 /* OrganicBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganicBubble.swift; sourceTree = "<group>"; };
 		459FA839B56AED7F00A701FD /* NetCheckCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetCheckCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B47342AC5551664211C91E /* UsageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageTests.swift; sourceTree = "<group>"; };
+		47854FD72E22013F774138B3 /* TracerouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracerouteView.swift; sourceTree = "<group>"; };
+		575AA1E54F853D3ED775A84A /* SpeedTestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestService.swift; sourceTree = "<group>"; };
+		59410F3D27FC3F6E9A148A3C /* GlassPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassPanelView.swift; sourceTree = "<group>"; };
 		59A49BC19D06853E34286DA4 /* NetCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59E63E005E0A00D21B3F9DFF /* FeatureWindowBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureWindowBackground.swift; sourceTree = "<group>"; };
+		6004BF336E05C4D5404F0BC1 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
+		601DBE398C833B053E84875A /* TracerouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracerouteTests.swift; sourceTree = "<group>"; };
+		62AB8E3B3AE6EA7AB0433130 /* ConnectivityMonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityMonitorTests.swift; sourceTree = "<group>"; };
+		6406050BB8394548617026DB /* SpeedTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestViewModel.swift; sourceTree = "<group>"; };
 		66B657B9B6BE8D03A79D4267 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		8024B3A7431C1A342AE853CC /* WiFiFinderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiFinderViewModel.swift; sourceTree = "<group>"; };
+		8DA116978946806DB017AF25 /* UsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageView.swift; sourceTree = "<group>"; };
+		8DFDBA690CE9F01A1DABF0D2 /* UsageQualityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageQualityService.swift; sourceTree = "<group>"; };
 		944A4FA2D732BBF1AF5E2388 /* NetCheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetCheckApp.swift; sourceTree = "<group>"; };
+		94F46DBA99DFA92C12E9E0C2 /* WiFiScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiScanner.swift; sourceTree = "<group>"; };
+		9908179B55F0FE43469AD5D1 /* ConnectivityStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityStatus.swift; sourceTree = "<group>"; };
+		9D885B115313D1E01A9FAE4B /* WiFiScannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiScannerTests.swift; sourceTree = "<group>"; };
 		A0E2924612A1A3E0E5643AAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A61F26BB27EEDB5944EA061F /* ConcentricWaves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentricWaves.swift; sourceTree = "<group>"; };
+		A6FDD0763C73BB6661B24F7E /* WiFiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiModels.swift; sourceTree = "<group>"; };
+		B143DCEA0747822939248113 /* HopListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopListView.swift; sourceTree = "<group>"; };
+		B2DA6293A313D253EC6E14FE /* WiFiFinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiFinderView.swift; sourceTree = "<group>"; };
+		B654DA7A977D3DFD7DF9692A /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		B71BED3EEA509F2AD46EF9E4 /* SpeedTestServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestServiceTests.swift; sourceTree = "<group>"; };
 		B95EEA32759B6C7CB1F198D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C2E9E3E98554D5D5B653F3AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C46978C4A89DBA797F3DB983 /* UsageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageViewModel.swift; sourceTree = "<group>"; };
+		C4EDB161F3484004387B7014 /* SpeedGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedGauge.swift; sourceTree = "<group>"; };
+		D3E19540AFCA8C25F77D4DC7 /* GlobeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeMapView.swift; sourceTree = "<group>"; };
+		D773977C2F0DA8B3D4DCF6C5 /* StatusMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuView.swift; sourceTree = "<group>"; };
+		DD6DA99F79D226DFBDE7B1B7 /* TracerouteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracerouteService.swift; sourceTree = "<group>"; };
+		E07F83851D50322E7D201C85 /* TracerouteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracerouteModels.swift; sourceTree = "<group>"; };
+		E3B18DF1C13AF28D63974259 /* TracerouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracerouteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +220,13 @@
 			isa = PBXGroup;
 			children = (
 				073F59EFC8E041C38D9DDA70 /* .gitkeep */,
+				62AB8E3B3AE6EA7AB0433130 /* ConnectivityMonitorTests.swift */,
+				2A10CD8D09FF5BFF7A1C7438 /* Info.plist */,
+				3EE92FBE966FA4868F793BEE /* ModelsTests.swift */,
+				B71BED3EEA509F2AD46EF9E4 /* SpeedTestServiceTests.swift */,
+				601DBE398C833B053E84875A /* TracerouteTests.swift */,
+				45B47342AC5551664211C91E /* UsageTests.swift */,
+				9D885B115313D1E01A9FAE4B /* WiFiScannerTests.swift */,
 			);
 			path = NetCheckCoreTests;
 			sourceTree = "<group>";
@@ -158,6 +248,9 @@
 		247BC9FB5833A960202B8C2F /* SpeedTest */ = {
 			isa = PBXGroup;
 			children = (
+				C4EDB161F3484004387B7014 /* SpeedGauge.swift */,
+				21AC2AD717B5B7003CD69A6D /* SpeedTestView.swift */,
+				6406050BB8394548617026DB /* SpeedTestViewModel.swift */,
 			);
 			path = SpeedTest;
 			sourceTree = "<group>";
@@ -187,6 +280,9 @@
 		35F7C70C32D87F658B5A8DD9 /* WiFiFinder */ = {
 			isa = PBXGroup;
 			children = (
+				A61F26BB27EEDB5944EA061F /* ConcentricWaves.swift */,
+				B2DA6293A313D253EC6E14FE /* WiFiFinderView.swift */,
+				8024B3A7431C1A342AE853CC /* WiFiFinderViewModel.swift */,
 			);
 			path = WiFiFinder;
 			sourceTree = "<group>";
@@ -195,7 +291,11 @@
 			isa = PBXGroup;
 			children = (
 				66B657B9B6BE8D03A79D4267 /* .gitkeep */,
+				59E63E005E0A00D21B3F9DFF /* FeatureWindowBackground.swift */,
+				59410F3D27FC3F6E9A148A3C /* GlassPanelView.swift */,
 				C2E9E3E98554D5D5B653F3AE /* Info.plist */,
+				43A75F47CF33BC8607EAF513 /* OrganicBubble.swift */,
+				20F69B0E1F06DB8E7FDBDEFB /* StatusBadge.swift */,
 			);
 			path = NetCheckUI;
 			sourceTree = "<group>";
@@ -203,6 +303,9 @@
 		713A721215654A371A18C7F5 /* StatusMenu */ = {
 			isa = PBXGroup;
 			children = (
+				1B4CBB6B58E0865BE8FBBF07 /* StatusMenuController.swift */,
+				D773977C2F0DA8B3D4DCF6C5 /* StatusMenuView.swift */,
+				6004BF336E05C4D5404F0BC1 /* WindowManager.swift */,
 			);
 			path = StatusMenu;
 			sourceTree = "<group>";
@@ -219,6 +322,8 @@
 		762060D0240452A5FF684597 /* SpeedTest */ = {
 			isa = PBXGroup;
 			children = (
+				338B59C8F9B008263E7D0B85 /* SpeedTestModels.swift */,
+				575AA1E54F853D3ED775A84A /* SpeedTestService.swift */,
 			);
 			path = SpeedTest;
 			sourceTree = "<group>";
@@ -226,6 +331,9 @@
 		7DC0AED2544647CEA8D634A1 /* WiFi */ = {
 			isa = PBXGroup;
 			children = (
+				36A4CCBB64143CB3013CF695 /* GeigerSoundEngine.swift */,
+				A6FDD0763C73BB6661B24F7E /* WiFiModels.swift */,
+				94F46DBA99DFA92C12E9E0C2 /* WiFiScanner.swift */,
 			);
 			path = WiFi;
 			sourceTree = "<group>";
@@ -246,6 +354,9 @@
 		93B62F1D7B67D7FD2A086F3C /* Traceroute */ = {
 			isa = PBXGroup;
 			children = (
+				0638B301B333BC1E6D20375B /* GeoIPService.swift */,
+				E07F83851D50322E7D201C85 /* TracerouteModels.swift */,
+				DD6DA99F79D226DFBDE7B1B7 /* TracerouteService.swift */,
 			);
 			path = Traceroute;
 			sourceTree = "<group>";
@@ -253,6 +364,9 @@
 		B13662D05150CE06E0044547 /* Monitor */ = {
 			isa = PBXGroup;
 			children = (
+				39C501F163CEFC3AFB49CB9C /* ConnectivityMonitor.swift */,
+				9908179B55F0FE43469AD5D1 /* ConnectivityStatus.swift */,
+				25A8801010D1DA3730ECD051 /* PingService.swift */,
 			);
 			path = Monitor;
 			sourceTree = "<group>";
@@ -260,6 +374,10 @@
 		CA42AF72FB77F6B87CE2E913 /* Traceroute */ = {
 			isa = PBXGroup;
 			children = (
+				D3E19540AFCA8C25F77D4DC7 /* GlobeMapView.swift */,
+				B143DCEA0747822939248113 /* HopListView.swift */,
+				47854FD72E22013F774138B3 /* TracerouteView.swift */,
+				E3B18DF1C13AF28D63974259 /* TracerouteViewModel.swift */,
 			);
 			path = Traceroute;
 			sourceTree = "<group>";
@@ -275,6 +393,8 @@
 		CBFD772D69960FA82502961B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				B654DA7A977D3DFD7DF9692A /* AppSettings.swift */,
+				1CD019B1E6508FD1064160E3 /* PreferencesView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -282,6 +402,7 @@
 		D105A47995B7C05A9C5BFD9E /* App */ = {
 			isa = PBXGroup;
 			children = (
+				2D65D49EC79AD2795740F038 /* AppDelegate.swift */,
 				944A4FA2D732BBF1AF5E2388 /* NetCheckApp.swift */,
 			);
 			path = App;
@@ -290,6 +411,8 @@
 		D3AB83FA32215A5B359770CC /* Usage */ = {
 			isa = PBXGroup;
 			children = (
+				3A1EA0282872732E76D0F314 /* UsageModels.swift */,
+				8DFDBA690CE9F01A1DABF0D2 /* UsageQualityService.swift */,
 			);
 			path = Usage;
 			sourceTree = "<group>";
@@ -305,6 +428,8 @@
 		E596103D18F4311F4BBE6A85 /* Usage */ = {
 			isa = PBXGroup;
 			children = (
+				8DA116978946806DB017AF25 /* UsageView.swift */,
+				C46978C4A89DBA797F3DB983 /* UsageViewModel.swift */,
 			);
 			path = Usage;
 			sourceTree = "<group>";
@@ -456,6 +581,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88EC9BDB74D2B0301BAC882E /* ConnectivityMonitorTests.swift in Sources */,
+				DEF3E4ECC8A526CA4A8B137D /* ModelsTests.swift in Sources */,
+				4CAB7797DDA1DAA1E0F3C63B /* SpeedTestServiceTests.swift in Sources */,
+				067E775E9B96804CB3CFEF33 /* TracerouteTests.swift in Sources */,
+				A764D92671358CD66D3127CA /* UsageTests.swift in Sources */,
+				D9CCF1C3F8618DFF75E1D7D1 /* WiFiScannerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +594,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAEAB2FEE9EF240103C0701C /* ConnectivityMonitor.swift in Sources */,
+				CBC2436F66BF95B137F90AA3 /* ConnectivityStatus.swift in Sources */,
+				26DB1531049748A1EC3542D9 /* GeigerSoundEngine.swift in Sources */,
+				AA787B5055A314CD30CA1BE4 /* GeoIPService.swift in Sources */,
+				F406B1A12DDBC9816B4EFF50 /* PingService.swift in Sources */,
+				82D2B429E84B158D21298E1F /* SpeedTestModels.swift in Sources */,
+				5F1B6C4BA22EFCE93DF55AD6 /* SpeedTestService.swift in Sources */,
+				C32AFF92870861CE909D501D /* TracerouteModels.swift in Sources */,
+				8A200242FD2632EDCDE47574 /* TracerouteService.swift in Sources */,
+				40C10C39087BF75477586BF8 /* UsageModels.swift in Sources */,
+				387A6A1CDF8F0ECFD431FD4C /* UsageQualityService.swift in Sources */,
+				A7A013BDF8EDE703FA064C22 /* WiFiModels.swift in Sources */,
+				54B893FCB301EEC085C2D9A5 /* WiFiScanner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +614,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9B44B8DDDA16EECCD8B4C5 /* AppDelegate.swift in Sources */,
+				92FEBF2FF3B48CD73728C5C3 /* AppSettings.swift in Sources */,
+				FA8292B955962E00F7685F55 /* ConcentricWaves.swift in Sources */,
+				BE1FF428BBFD7FFE796F044F /* GlobeMapView.swift in Sources */,
+				4A792C433C1191661AF3C14F /* HopListView.swift in Sources */,
 				647F44C8B7E8C167BFBCAC32 /* NetCheckApp.swift in Sources */,
+				C55B083789D4AFADF9A72AFD /* PreferencesView.swift in Sources */,
+				C369372512180F29AB626BE7 /* SpeedGauge.swift in Sources */,
+				7606284DE92DC6B876706B19 /* SpeedTestView.swift in Sources */,
+				EC9048974E50A6D452F20738 /* SpeedTestViewModel.swift in Sources */,
+				6FA14C67DE55ED8A56E7C4C0 /* StatusMenuController.swift in Sources */,
+				A0E0C7E542D17F2FD22D7D90 /* StatusMenuView.swift in Sources */,
+				F005BAFA84774BA7F20AD901 /* TracerouteView.swift in Sources */,
+				569FA45938BFE0BE189F58F9 /* TracerouteViewModel.swift in Sources */,
+				4D8998F1A14D30399676F216 /* UsageView.swift in Sources */,
+				F588CF772348038B2352CBF2 /* UsageViewModel.swift in Sources */,
+				80B649CEB3FEE1B56F25DF61 /* WiFiFinderView.swift in Sources */,
+				FDE2724F9744CD44DB827117 /* WiFiFinderViewModel.swift in Sources */,
+				EF34918CE6C1A2986129BDD6 /* WindowManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +640,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEF77C31FA8D5260A0D3E6B6 /* FeatureWindowBackground.swift in Sources */,
+				0EDDDC54D725124BE5C44889 /* GlassPanelView.swift in Sources */,
+				4549BA1106C1D5D71126EA87 /* OrganicBubble.swift in Sources */,
+				3049A21296A9F0965DE92F8E /* StatusBadge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +679,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/NetCheckCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -726,6 +893,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/NetCheckCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

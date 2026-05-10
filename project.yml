@@ -106,3 +106,12 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.vincent.NetCheckCoreTests
         CODE_SIGN_IDENTITY: "-"
+
+schemes:
+  NetCheckCoreTests:
+    build:
+      targets:
+        NetCheckCoreTests: [test]
+    test:
+      targets:
+        - NetCheckCoreTests
