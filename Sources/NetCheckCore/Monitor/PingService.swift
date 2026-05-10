@@ -34,7 +34,7 @@ actor PingService {
         await withCheckedContinuation { continuation in
             DispatchQueue.global().async {
                 var hints = addrinfo()
-                hints.ai_socktype = Int32(SOCK_STREAM.rawValue)
+                hints.ai_socktype = SOCK_STREAM
                 var result: UnsafeMutablePointer<addrinfo>?
                 let code = getaddrinfo(host, nil, &hints, &result)
                 if result != nil { freeaddrinfo(result) }
