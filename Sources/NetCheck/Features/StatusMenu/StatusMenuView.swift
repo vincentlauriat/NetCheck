@@ -18,7 +18,7 @@ struct StatusMenuView: View {
                 Spacer()
             }
             .padding()
-            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 8))
+            .glassEffect()
 
             Divider()
 
