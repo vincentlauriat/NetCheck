@@ -39,7 +39,7 @@
 	<key>SUFeedURL</key>
 	<string>https://raw.githubusercontent.com/vincentlauriat/NetCheck/main/appcast.xml</string>
 	<key>SUPublicEDKey</key>
-	<string>PLACEHOLDER</string>
+	<string>L4A+SGmQtBLMr+d6XqA/6B9NwY4c89azkDETg5W5xfo=</string>
 	<key>SUScheduledCheckInterval</key>
 	<integer>86400</integer>
 </dict>

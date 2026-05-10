@@ -1,6 +1,7 @@
 build/
 *.dmg
-.sparkle-tools/Symbols/
+.sparkle-tools
+.sparkle-tools/
 *.xcodeproj/xcuserdata/
 *.xcodeproj/project.xcworkspace/xcuserdata/
 .DS_Store

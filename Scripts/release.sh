@@ -14,7 +14,7 @@ if ! grep -q "MARKETING_VERSION: \"$VERSION\"" project.yml; then
 fi
 
 SIGNING_IDENTITY="${SIGNING_IDENTITY:-Developer ID Application: Vincent LAURIAT (KFLACS69T9)}"
-NOTARY_PROFILE="${NOTARY_PROFILE:-NetCheck-Notary}"
+NOTARY_PROFILE="${NOTARY_PROFILE:-MarkdownViewer-Notary}"
 
 echo "→ xcodegen generate"
 xcodegen generate >/dev/null
@@ -101,7 +101,7 @@ xcrun stapler validate "$DMG"
 
 "$ROOT/Scripts/fetch-sparkle-tools.sh" >/dev/null
 SPARKLE_TOOLS="$ROOT/.sparkle-tools"
-SPARKLE_SIG_LINE=$("$SPARKLE_TOOLS/bin/sign_update" --account "NetCheck" "$DMG")
+SPARKLE_SIG_LINE=$("$SPARKLE_TOOLS/bin/sign_update" --account "MarkdownViewer" "$DMG")
 BUILD_NUMBER=$(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" \
   "$ROOT/build/Build/Products/Release/NetCheck.app/Contents/Info.plist")
 PUB_DATE=$(date -R)
