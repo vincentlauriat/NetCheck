@@ -1,0 +1,9 @@
+build/
+*.dmg
+.sparkle-tools/Symbols/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+.DS_Store
+.superpowers/
+*.xcuserstate
+DerivedData/
