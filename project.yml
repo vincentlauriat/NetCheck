@@ -82,7 +82,6 @@ targets:
         SUEnableAutomaticChecks: true
         SUScheduledCheckInterval: 86400
         SUAutomaticallyUpdate: false
-        CODE_SIGN_ENTITLEMENTS: Sources/NetCheck/NetCheck.entitlements
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.vincent.NetCheck
