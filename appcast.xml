@@ -5,5 +5,17 @@
     <link>https://raw.githubusercontent.com/vincentlauriat/NetCheck/main/appcast.xml</link>
     <description>NetCheck release feed</description>
     <language>en</language>
+    <item>
+      <title>v1.0.1</title>
+      <pubDate>Mon, 11 May 2026 21:55:14 +0200</pubDate>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://github.com/vincentlauriat/NetCheck/releases/tag/v1.0.1</sparkle:releaseNotesLink>
+      <enclosure
+        url="https://github.com/vincentlauriat/NetCheck/releases/download/v1.0.1/NetCheck-1.0.1.dmg"
+        type="application/octet-stream"
+        sparkle:edSignature="Abt/gzat8p4vsm3mKgoq9Yj7kJTJ7gQvIM08orUdKiVXqbWaFVlKF1rhf83wTZOAhl9AYsF6oO/qqypc8im0CQ==" length="2096729" />
+    </item>
   </channel>
 </rss>
