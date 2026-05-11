@@ -14,7 +14,14 @@ Click to open WiFi Finder, Speed Test, Traceroute, or Usage Quality.
 
 <br/>
 
-<img src="docs/screenshots/wifi-finder.png" width="220" alt="WiFi Finder"/> <img src="docs/screenshots/speed-test.png" width="220" alt="Speed Test"/> <img src="docs/screenshots/traceroute.png" width="220" alt="Traceroute"/> <img src="docs/screenshots/usage.png" width="220" alt="Usage Quality"/>
+*Walk toward your router · measure your connection · trace every hop · know what your network can handle*
+
+<br/>
+
+| WiFi Finder | Speed Test | Traceroute | Usage Quality |
+|:-----------:|:----------:|:----------:|:-------------:|
+| <img src="docs/screenshots/wifi-finder.png" width="180" alt="WiFi Finder"/> | <img src="docs/screenshots/speed-test.png" width="180" alt="Speed Test"/> | <img src="docs/screenshots/traceroute.png" width="180" alt="Traceroute"/> | <img src="docs/screenshots/usage.png" width="180" alt="Usage Quality"/> |
+| Geiger-counter sound guides you to the strongest WiFi spot | Download, upload, RPM and ping latency via Apple's engine | Animated 3D globe — camera flies to each hop then zooms out | Single latency mapped to hierarchical thresholds per use case |
 
 </div>
 
