@@ -1,43 +1,70 @@
+<div align="center">
+
 # NetCheck
 
-![macOS 26+](https://img.shields.io/badge/macOS-26%2B-blue)
-![Swift 6](https://img.shields.io/badge/Swift-6.0-orange)
-![License MIT](https://img.shields.io/badge/license-MIT-green)
+**A native macOS menu bar app to monitor your network in real time.**
 
-**NetCheck** is a macOS menu bar app that monitors your internet connectivity in real time.
+Sit in your menu bar. Green when online, orange when degraded, red when down.
+Click to open WiFi Finder, Speed Test, Traceroute, or Usage Quality.
 
-### Features
+[![Platform](https://img.shields.io/badge/platform-macOS%2026%2B-blue.svg)](https://www.apple.com/macos)
+[![Release](https://img.shields.io/github/v/release/vincentlauriat/NetCheck?color=brightgreen)](https://github.com/vincentlauriat/NetCheck/releases/latest)
+[![Swift](https://img.shields.io/badge/Swift-6.0-orange.svg)](https://swift.org)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-- 🌐 **Globe icon** — green / orange / red based on connectivity
-- 📡 **WiFi Finder** — Geiger counter style with organic bubbles, concentric waves, and sound
-- ⚡ **Speed Test** — powered by Apple's `networkQuality` (RPM + download/upload)
-- 🗺️ **Traceroute** — animated 3D globe camera from space to each hop
-- 📊 **Usage** — quality indicators per use case (mail, workspace, video conf, gaming)
-- ⚙️ **Preferences** — launch at login, Sparkle auto-updates
+</div>
 
-### Installation
+---
 
-Download the latest DMG from [Releases](https://github.com/vincentlauriat/NetCheck/releases).
+## Features
 
-**Requirements:** macOS 26 or later
+| | |
+| --- | --- |
+| 🌐 **Globe icon** | Green / orange / red connectivity indicator, always visible in the menu bar |
+| 📡 **WiFi Finder** | Walk around with Geiger-counter sound and concentric waves — find the strongest spot |
+| ⚡ **Speed Test** | Download, upload, RPM and latency via Apple's `networkQuality` engine |
+| 🗺️ **Traceroute** | Animated 3D globe — camera flies from space to each hop, then zooms back out |
+| 📊 **Usage Quality** | Single latency measurement mapped to hierarchical thresholds (mail → gaming) |
+| ⚙️ **Preferences** | Launch at login via `SMAppService`, Sparkle auto-updates |
 
-### Build from source
+## Install
+
+Grab the latest `.dmg` from the [Releases page](https://github.com/vincentlauriat/NetCheck/releases/latest), mount it, and drag `NetCheck.app` to `/Applications`.
+
+**Requirements:** macOS 26 or later.
+
+Releases are signed with an Apple Developer ID, built with the Hardened Runtime, and notarized by Apple — they open without any Gatekeeper warning.
+
+## Build from source
+
+**Requirements:** macOS 26+, Xcode 16+, [XcodeGen](https://github.com/yonaskolb/XcodeGen).
 
 ```bash
 brew install xcodegen
+git clone https://github.com/vincentlauriat/NetCheck.git
+cd NetCheck
 xcodegen generate
-./Scripts/build.sh run
+open NetCheck.xcodeproj
 ```
 
-### Architecture
+Or use the build script:
 
-Three SPM targets:
-- `NetCheckCore` — network logic, no UI (actors, async/await)
-- `NetCheckUI` — shared SwiftUI components (Liquid Glass, OrganicBubble)
-- `NetCheck` — app assembly (NSStatusItem, feature views)
+```bash
+./Scripts/build.sh run   # build Debug + launch
+```
 
-See [ARCHITECTURE.md](ARCHITECTURE.md) for details.
+## Architecture
 
-### License
+Three targets, strict Swift 6 concurrency, no sandbox:
 
-MIT © Vincent Lauriat
+| Target | Role |
+| --- | --- |
+| `NetCheckCore` | Network logic — actors, async/await, zero UI |
+| `NetCheckUI` | Shared SwiftUI components — Liquid Glass panels, `OrganicBubble`, `FeatureWindowBackground` |
+| `NetCheck` | App assembly — `NSStatusItem`, `WindowManager`, feature views |
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for the full design.
+
+## License
+
+MIT © 2026 Vincent Lauriat — see [LICENSE](LICENSE).
