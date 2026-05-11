@@ -27,7 +27,8 @@ Package.resolved
 release-notes-*.md
 
 # Perso / local
-docs/
+docs/*.md
+docs/superpowers/
 COMMANDS.md
 CHANGES.md
 MEMORY.md

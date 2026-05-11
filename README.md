@@ -12,6 +12,10 @@ Click to open WiFi Finder, Speed Test, Traceroute, or Usage Quality.
 [![Swift](https://img.shields.io/badge/Swift-6.0-orange.svg)](https://swift.org)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
+<br/>
+
+<img src="docs/screenshots/wifi-finder.png" width="220" alt="WiFi Finder"/> <img src="docs/screenshots/speed-test.png" width="220" alt="Speed Test"/> <img src="docs/screenshots/traceroute.png" width="220" alt="Traceroute"/> <img src="docs/screenshots/usage.png" width="220" alt="Usage Quality"/>
+
 </div>
 
 ---
