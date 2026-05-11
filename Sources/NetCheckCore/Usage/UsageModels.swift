@@ -14,6 +14,41 @@ public enum UsageProfile: String, CaseIterable, Sendable {
         case .gaming:    return "gamecontroller.fill"
         }
     }
+
+    // Seuils de latence hiérarchiques : gaming est le plus exigeant, mail le plus tolérant.
+    // Garantie : si gaming = Excellent, tous les profils le sont aussi.
+    public func quality(for latencyMs: Double) -> QualityLevel {
+        switch self {
+        case .mail:
+            switch latencyMs {
+            case ..<150:  return .excellent
+            case ..<400:  return .good
+            case ..<800:  return .fair
+            default:      return .poor
+            }
+        case .workspace:
+            switch latencyMs {
+            case ..<80:   return .excellent
+            case ..<200:  return .good
+            case ..<400:  return .fair
+            default:      return .poor
+            }
+        case .videoConf:
+            switch latencyMs {
+            case ..<40:   return .excellent
+            case ..<80:   return .good
+            case ..<150:  return .fair
+            default:      return .poor
+            }
+        case .gaming:
+            switch latencyMs {
+            case ..<20:   return .excellent
+            case ..<50:   return .good
+            case ..<80:   return .fair
+            default:      return .poor
+            }
+        }
+    }
 }
 
 public enum QualityLevel: Sendable {

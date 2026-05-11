@@ -1,50 +1,56 @@
 import Foundation
 
-public actor UsageQualityService {
+public struct UsageQualityService: Sendable {
     public init() {}
 
+    // Mesure la latence une seule fois vers un endpoint neutre,
+    // puis déduit la qualité pour chaque profil selon ses seuils propres.
     public func evaluate() async -> [UsageResult] {
-        await withTaskGroup(of: UsageResult.self) { group in
-            for profile in UsageProfile.allCases {
-                group.addTask { await self.test(profile: profile) }
+        let latencyMs = await measureLatency()
+        return UsageProfile.allCases.map { profile in
+            UsageResult(profile: profile, quality: profile.quality(for: latencyMs), latencyMs: latencyMs)
+        }
+    }
+
+    // Yield les résultats un par un pour les animations de la vue.
+    public func stream() -> AsyncStream<UsageResult> {
+        AsyncStream { continuation in
+            Task {
+                let latencyMs = await measureLatency()
+                for profile in UsageProfile.allCases {
+                    continuation.yield(UsageResult(
+                        profile: profile,
+                        quality: profile.quality(for: latencyMs),
+                        latencyMs: latencyMs
+                    ))
+                    try? await Task.sleep(for: .milliseconds(180))
+                }
+                continuation.finish()
             }
-            var results: [UsageResult] = []
-            for await result in group { results.append(result) }
-            return results.sorted { $0.profile.rawValue < $1.profile.rawValue }
         }
     }
 
-    private func test(profile: UsageProfile) async -> UsageResult {
-        let (host, threshold): (String, Double) = switch profile {
-        case .mail:      ("smtp.gmail.com", 150)
-        case .workspace: ("docs.google.com", 200)
-        case .videoConf: ("zoom.us", 100)
-        case .gaming:    ("1.1.1.1", 50)
+    // Moyenne de 3 HEAD requests vers 1.1.1.1 (Cloudflare — neutre, stable, mondial).
+    private func measureLatency() async -> Double {
+        let samples = await withTaskGroup(of: Double.self) { group in
+            for _ in 0..<3 {
+                group.addTask { await self.ping() }
+            }
+            var results: [Double] = []
+            for await v in group { results.append(v) }
+            return results
         }
-
-        let latency = await measureTCPLatency(host: host, port: 443)
-        let quality: QualityLevel = switch latency {
-        case ..<(threshold * 0.5):  .excellent
-        case ..<threshold:           .good
-        case ..<(threshold * 1.5):  .fair
-        default:                     .poor
-        }
-        return UsageResult(profile: profile, quality: quality, latencyMs: latency)
+        let valid = samples.filter { $0 < 5000 }
+        guard !valid.isEmpty else { return 999 }
+        return valid.reduce(0, +) / Double(valid.count)
     }
 
-    private func measureTCPLatency(host: String, port: Int) async -> Double {
-        let process = Process()
-        process.executableURL = URL(fileURLWithPath: "/usr/bin/nc")
-        process.arguments = ["-z", "-w", "2", host, "\(port)"]
-        process.standardOutput = Pipe()
-        process.standardError = Pipe()
+    private func ping() async -> Double {
+        guard let url = URL(string: "https://1.1.1.1") else { return 999 }
+        var request = URLRequest(url: url, timeoutInterval: 5)
+        request.httpMethod = "HEAD"
         let start = Date()
-        do {
-            try process.run()
-            process.waitUntilExit()
-            return Date().timeIntervalSince(start) * 1000
-        } catch {
-            return 999
-        }
+        _ = try? await URLSession.shared.data(for: request)
+        return Date().timeIntervalSince(start) * 1000
     }
 }

@@ -13,25 +13,49 @@ struct SpeedTestView: View {
 
                 HStack(spacing: 32) {
                     SpeedGauge(value: vm.download, maxValue: 1000,
-                               label: "Téléchargement", icon: "arrow.down", color: .blue)
+                               label: "Téléchargement", icon: "arrow.down", color: .blue,
+                               isActive: vm.isRunning)
                     SpeedGauge(value: vm.upload, maxValue: 500,
-                               label: "Envoi", icon: "arrow.up", color: .purple)
+                               label: "Envoi", icon: "arrow.up", color: .purple,
+                               isActive: vm.isRunning)
                 }
 
                 GlassPanelView {
-                    VStack(spacing: 4) {
-                        Text("\(vm.rpm)")
-                            .font(.system(size: 40, weight: .bold, design: .rounded))
-                            .monospacedDigit()
-                            .foregroundStyle(.primary)
-                        Text("RPM — \(vm.rpmLabel)")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                        Text("Responsiveness Per Minute (métrique Apple)")
-                            .font(.caption2)
-                            .foregroundStyle(.tertiary)
+                    HStack(spacing: 0) {
+                        // RPM
+                        VStack(spacing: 4) {
+                            Text("\(vm.rpm)")
+                                .font(.system(size: 36, weight: .bold, design: .rounded))
+                                .monospacedDigit()
+                                .foregroundStyle(.primary)
+                            Text("RPM — \(vm.rpmLabel)")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            Text("Responsiveness Per Minute")
+                                .font(.caption2)
+                                .foregroundStyle(.tertiary)
+                        }
+                        .frame(maxWidth: .infinity)
+
+                        Divider()
+                            .frame(height: 52)
+
+                        // Latence
+                        VStack(spacing: 4) {
+                            Text(vm.latencyMs > 0 ? String(format: "%.0f ms", vm.latencyMs) : "—")
+                                .font(.system(size: 36, weight: .bold, design: .rounded))
+                                .monospacedDigit()
+                                .foregroundStyle(.primary)
+                            Text("Latence — \(vm.latencyLabel)")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                            Text("Round-trip time (RTT)")
+                                .font(.caption2)
+                                .foregroundStyle(.tertiary)
+                        }
+                        .frame(maxWidth: .infinity)
                     }
-                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 4)
                 }
                 .padding(.horizontal)
 

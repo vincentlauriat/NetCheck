@@ -4,12 +4,13 @@ import AVFoundation
 public final class GeigerSoundEngine: @unchecked Sendable {
     private let engine = AVAudioEngine()
     private let playerNode = AVAudioPlayerNode()
+    private let format = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 1)!
     private var tickTask: Task<Void, Never>?
     private var isRunning = false
 
     public init() {
         engine.attach(playerNode)
-        engine.connect(playerNode, to: engine.mainMixerNode, format: nil)
+        engine.connect(playerNode, to: engine.mainMixerNode, format: format)
         try? engine.start()
     }
 
@@ -36,8 +37,7 @@ public final class GeigerSoundEngine: @unchecked Sendable {
     }
 
     private func playTick() {
-        let sampleRate = 44100.0
-        let format = AVAudioFormat(standardFormatWithSampleRate: sampleRate, channels: 1)!
+        let sampleRate = format.sampleRate
         let frameCount = AVAudioFrameCount(sampleRate * 0.003)
         guard let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: frameCount) else { return }
         buffer.frameLength = frameCount

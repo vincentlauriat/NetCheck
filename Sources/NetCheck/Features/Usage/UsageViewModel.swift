@@ -9,9 +9,14 @@ final class UsageViewModel {
     private let service = UsageQualityService()
 
     func refresh() {
+        results = []
         isLoading = true
         Task {
-            results = await service.evaluate()
+            for await result in service.stream() {
+                withAnimation(.spring(duration: 0.45)) {
+                    results.append(result)
+                }
+            }
             isLoading = false
         }
     }

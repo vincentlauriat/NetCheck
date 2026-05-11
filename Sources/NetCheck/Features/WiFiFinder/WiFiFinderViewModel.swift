@@ -37,6 +37,22 @@ final class WiFiFinderViewModel {
     }
 
     var waveDuration: Double {
-        1.5 + (1 - signal.strength) * 2.5
+        0.7 + (1 - signal.strength) * 3.8    // 0.7s (fort) → 4.5s (faible)
+    }
+
+    var moveTip: String {
+        switch signal.strength {
+        case 0.7...: return "Signal optimal — vous êtes bien positionné"
+        case 0.4...: return "Déplacez-vous lentement pour trouver un meilleur signal"
+        default:     return "Signal faible — rapprochez-vous du routeur ou changez de pièce"
+        }
+    }
+
+    var moveTipIcon: String {
+        switch signal.strength {
+        case 0.7...: return "checkmark.circle.fill"
+        case 0.4...: return "figure.walk"
+        default:     return "exclamationmark.triangle.fill"
+        }
     }
 }

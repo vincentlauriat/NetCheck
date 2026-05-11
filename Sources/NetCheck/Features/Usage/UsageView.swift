@@ -12,19 +12,29 @@ struct UsageView: View {
                     .font(.title2.bold())
                     .padding(.top, 20)
 
-                if vm.isLoading {
-                    ProgressView("Mesure en cours…")
-                        .padding(.top, 40)
-                } else {
-                    VStack(spacing: 10) {
-                        ForEach(UsageProfile.allCases, id: \.self) { profile in
-                            UsageCard(
-                                profile: profile,
-                                result: vm.results.first(where: { $0.profile == profile })
-                            )
-                        }
+                // La grille est toujours visible — les cartes passent de "attente" à "résultat"
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                    ForEach(UsageProfile.allCases, id: \.self) { profile in
+                        UsageCard(
+                            profile: profile,
+                            result: vm.results.first(where: { $0.profile == profile }),
+                            isLoading: vm.isLoading
+                        )
                     }
-                    .padding(.horizontal)
+                }
+                .padding(.horizontal)
+                .animation(.spring(duration: 0.45), value: vm.results.count)
+
+                if vm.isLoading {
+                    HStack(spacing: 6) {
+                        ProgressView()
+                            .scaleEffect(0.75)
+                            .tint(.indigo)
+                        Text("Mesure en cours…")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    .transition(.opacity)
                 }
 
                 Spacer()
@@ -34,6 +44,7 @@ struct UsageView: View {
                     .disabled(vm.isLoading)
                     .padding(.bottom, 20)
             }
+            .animation(.easeInOut(duration: 0.3), value: vm.isLoading)
         }
         .onAppear { vm.refresh() }
     }
@@ -42,6 +53,7 @@ struct UsageView: View {
 struct UsageCard: View {
     let profile: UsageProfile
     let result: UsageResult?
+    var isLoading: Bool = false
 
     var body: some View {
         GlassPanelView {
@@ -56,14 +68,26 @@ struct UsageCard: View {
                         Text(String(format: "%.0f ms", ms))
                             .font(.caption2.monospacedDigit())
                             .foregroundStyle(.secondary)
+                            .transition(.opacity.combined(with: .move(edge: .bottom)))
+                    } else {
+                        Text("—")
+                            .font(.caption2.monospacedDigit())
+                            .foregroundStyle(.tertiary)
                     }
                 }
                 Spacer()
-                if let result {
-                    StatusBadge(quality: result.quality)
-                } else {
-                    ProgressView().scaleEffect(0.7)
+                Group {
+                    if let result {
+                        StatusBadge(quality: result.quality)
+                            .transition(.scale(scale: 0.6).combined(with: .opacity))
+                    } else {
+                        ProgressView()
+                            .scaleEffect(0.7)
+                            .tint(.indigo.opacity(0.6))
+                            .transition(.opacity)
+                    }
                 }
+                .animation(.spring(duration: 0.4), value: result != nil)
             }
         }
     }

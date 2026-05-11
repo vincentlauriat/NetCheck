@@ -7,48 +7,72 @@ struct TracerouteView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             GlobeMapView(hops: vm.hops, activeIndex: vm.activeHopIndex,
-                         cameraPosition: $vm.cameraPosition)
+                         cameraPosition: $vm.cameraPosition,
+                         planeCoordinate: vm.planeCoordinate,
+                         planeHeading: vm.planeHeading,
+                         planePath: vm.planePath)
 
             VStack(spacing: 8) {
-                if vm.activeHopIndex >= 0, vm.activeHopIndex < vm.hops.count {
+                // Infos hop actif — visible uniquement pendant l'animation
+                if vm.isRunning, vm.activeHopIndex >= 0, vm.activeHopIndex < vm.hops.count {
                     let hop = vm.hops[vm.activeHopIndex]
-                    GlassPanelView {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text("Hop \(hop.id + 1) · \(hop.city ?? hop.ip ?? "?")")
-                                    .font(.caption.weight(.semibold))
-                                if let country = hop.country {
-                                    Text(country).font(.caption2).foregroundStyle(.secondary)
-                                }
-                            }
-                            Spacer()
-                            if let ms = hop.latencyMs {
-                                Text(String(format: "%.0f ms", ms))
-                                    .font(.caption.monospacedDigit().bold())
-                            }
-                            if let asn = hop.asn {
-                                Text(asn.components(separatedBy: " ").first ?? "")
-                                    .font(.caption2)
-                                    .foregroundStyle(.secondary)
+                    HStack {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Hop \(hop.id + 1) · \(hop.city ?? hop.ip ?? "?")")
+                                .font(.caption.weight(.semibold))
+                            if let country = hop.country {
+                                Text(country).font(.caption2).foregroundStyle(.secondary)
                             }
                         }
+                        Spacer()
+                        if let ms = hop.latencyMs {
+                            Text(String(format: "%.0f ms", ms))
+                                .font(.caption.monospacedDigit().bold())
+                        }
+                        if let asn = hop.asn {
+                            Text(asn.components(separatedBy: " ").first ?? "")
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                                .lineLimit(1)
+                        }
                     }
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 6)
+                    .background(Color.yellow.opacity(0.2), in: RoundedRectangle(cornerRadius: 8))
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.yellow, lineWidth: 1))
                     .padding(.horizontal)
+                    .transition(.move(edge: .top).combined(with: .opacity))
                 }
 
                 HopListView(hops: vm.hops, activeIndex: vm.activeHopIndex)
                     .padding(.vertical, 4)
 
                 HStack(spacing: 12) {
-                    Button("Démarrer") { vm.start() }
+                    Button("Tracer") { vm.start() }
                         .disabled(vm.isRunning)
                     Button("Rejouer") { vm.replay() }
-                        .disabled(vm.isRunning)
+                        .disabled(vm.isRunning || vm.hops.isEmpty)
                 }
                 .buttonStyle(.borderedProminent)
+
+                // Saisie destination — tout en bas
+                GlassPanelView {
+                    HStack(spacing: 8) {
+                        Image(systemName: "mappin.and.ellipse")
+                            .foregroundStyle(.secondary)
+                        TextField("IP ou nom d'hôte", text: $vm.destination)
+                            .textFieldStyle(.plain)
+                            .onSubmit { if !vm.isRunning { vm.start() } }
+                        if vm.isRunning {
+                            ProgressView().scaleEffect(0.7)
+                        }
+                    }
+                }
+                .padding(.horizontal)
                 .padding(.bottom, 16)
             }
+            .animation(.easeInOut(duration: 0.25), value: vm.isRunning)
         }
-        .frame(width: 600, height: 500)
+        .frame(minWidth: 500, minHeight: 420)
     }
 }

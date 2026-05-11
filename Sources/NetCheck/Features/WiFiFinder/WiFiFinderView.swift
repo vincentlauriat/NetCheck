@@ -13,7 +13,7 @@ struct WiFiFinderView: View {
                     .padding(.top, 20)
 
                 ZStack {
-                    ConcentricWaves(color: vm.tintColor, duration: vm.waveDuration)
+                    ConcentricWaves(color: vm.tintColor, duration: vm.waveDuration, strength: vm.signal.strength)
                     Image(systemName: "antenna.radiowaves.left.and.right")
                         .font(.system(size: 32, weight: .medium))
                         .foregroundStyle(vm.tintColor)
@@ -39,6 +39,20 @@ struct WiFiFinderView: View {
                     }
                 }
                 .padding(.horizontal)
+
+                // Conseil contextuel selon la force du signal
+                HStack(spacing: 6) {
+                    Image(systemName: vm.moveTipIcon)
+                        .font(.caption)
+                        .foregroundStyle(vm.tintColor)
+                    Text(vm.moveTip)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.leading)
+                }
+                .padding(.horizontal, 24)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .animation(.easeInOut(duration: 0.4), value: vm.signal.strength)
 
                 GlassPanelView {
                     HStack {

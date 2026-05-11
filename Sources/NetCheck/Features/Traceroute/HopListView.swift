@@ -23,12 +23,18 @@ struct HopChip: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(hop.city ?? (hop.isTimeout ? "Timeout" : hop.ip ?? "?"))
-                .font(.caption.weight(isActive ? .bold : .regular))
+            Text(hop.isTimeout ? "* * *" : (hop.ip ?? "?"))
+                .font(.caption.monospacedDigit().weight(isActive ? .semibold : .regular))
+            if let city = hop.city {
+                Text(city)
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+            }
             if let ms = hop.latencyMs {
                 Text(String(format: "%.0f ms", ms))
                     .font(.caption2.monospacedDigit())
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(isActive ? .primary : .secondary)
             }
         }
         .padding(.horizontal, 10)
