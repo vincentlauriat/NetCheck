@@ -78,7 +78,7 @@ targets:
         NSSupportsAutomaticGraphicsSwitching: true
         NSLocalNetworkUsageDescription: "NetCheck monitors your internet connectivity."
         SUFeedURL: "https://raw.githubusercontent.com/vincentlauriat/NetCheck/main/appcast.xml"
-        SUPublicEDKey: "L4A+SGmQtBLMr+d6XqA/6B9NwY4c89azkDETg5W5xfo="
+        SUPublicEDKey: "9PD2SBwLL4XoycyAGzaE+gO7ctuxSfuFMMajiZdXhXQ="
         SUEnableAutomaticChecks: true
         SUScheduledCheckInterval: 86400
         SUAutomaticallyUpdate: false

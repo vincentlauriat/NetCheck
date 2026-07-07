@@ -14,7 +14,7 @@ if ! grep -q "MARKETING_VERSION: \"$VERSION\"" project.yml; then
 fi
 
 SIGNING_IDENTITY="${SIGNING_IDENTITY:-Developer ID Application: Vincent LAURIAT (KFLACS69T9)}"
-NOTARY_PROFILE="${NOTARY_PROFILE:-MarkdownViewer-Notary}"
+NOTARY_PROFILE="${NOTARY_PROFILE:-AppliMacVincentGithub}"
 
 echo "→ xcodegen generate"
 xcodegen generate >/dev/null
