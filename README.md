@@ -5,7 +5,7 @@
 **A native macOS menu bar app to monitor your network in real time.**
 
 Sit in your menu bar. Green when online, orange when degraded, red when down.
-Click to open WiFi Finder, Speed Test, Traceroute, or Usage Quality.
+Click to open WiFi Finder, WiFi Diagnostic, Speed Test, Traceroute, or Usage Quality.
 
 [![Platform](https://img.shields.io/badge/platform-macOS%2026%2B-blue.svg)](https://www.apple.com/macos)
 [![Release](https://img.shields.io/github/v/release/vincentlauriat/NetCheck?color=brightgreen)](https://github.com/vincentlauriat/NetCheck/releases/latest)
@@ -33,6 +33,7 @@ Click to open WiFi Finder, Speed Test, Traceroute, or Usage Quality.
 | --- | --- |
 | 🌐 **Globe icon** | Green / orange / red connectivity indicator, always visible in the menu bar |
 | 📡 **WiFi Finder** | Walk around with Geiger-counter sound and concentric waves — find the strongest spot |
+| 🔎 **WiFi Diagnostic** | Every visible access point listed individually (per-BSSID, not grouped by name) with signal, noise/SNR, channel width, Wi-Fi generation and security level — optional grouping by SSID |
 | ⚡ **Speed Test** | Download, upload, RPM and latency via Apple's `networkQuality` engine |
 | 🗺️ **Traceroute** | Animated 3D globe — camera flies from space to each hop, then zooms back out |
 | 📊 **Usage Quality** | Single latency measurement mapped to hierarchical thresholds (mail → gaming) |
