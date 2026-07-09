@@ -3,7 +3,7 @@ import SwiftUI
 
 @MainActor
 enum WindowManager {
-    enum Feature { case wifiFinder, speedTest, traceroute, usage, settings }
+    enum Feature { case wifiFinder, wifiScan, speedTest, traceroute, usage, settings }
 
     private static var panels: [Feature: NSPanel] = [:]
     private static var delegates: [Feature: PanelDelegate] = [:]
@@ -27,12 +27,13 @@ enum WindowManager {
     private static func makePanel(for feature: Feature) -> NSPanel {
         let (view, size): (AnyView, NSSize) = switch feature {
         case .wifiFinder: (AnyView(WiFiFinderView()), NSSize(width: 680, height: 460))
+        case .wifiScan:   (AnyView(WiFiScanView()),   NSSize(width: 520, height: 480))
         case .speedTest:  (AnyView(SpeedTestView()),  NSSize(width: 468, height: 480))
         case .traceroute: (AnyView(TracerouteView()), NSSize(width: 640, height: 520))
         case .usage:      (AnyView(UsageView()),       NSSize(width: 1020, height: 480))
         case .settings:   (AnyView(PreferencesView()), NSSize(width: 380, height: 300))
         }
-        let isResizable = feature == .wifiFinder || feature == .speedTest || feature == .traceroute || feature == .usage
+        let isResizable = feature == .wifiFinder || feature == .wifiScan || feature == .speedTest || feature == .traceroute || feature == .usage
         var mask: NSWindow.StyleMask = [.titled, .closable, .fullSizeContentView, .nonactivatingPanel]
         if isResizable { mask.insert(.resizable) }
 
@@ -47,6 +48,7 @@ enum WindowManager {
         panel.isMovableByWindowBackground = true
         switch feature {
         case .wifiFinder: panel.minSize = NSSize(width: 480, height: 380)
+        case .wifiScan:   panel.minSize = NSSize(width: 420, height: 380)
         case .speedTest:  panel.minSize = NSSize(width: 380, height: 420)
         case .traceroute: panel.minSize = NSSize(width: 500, height: 420)
         case .usage:      panel.minSize = NSSize(width: 680, height: 400)

@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.2</string>
+	<string>1.1.0</string>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>4</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>26.0</string>
 	<key>LSUIElement</key>
@@ -28,6 +28,8 @@
 	<true/>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>NetCheck monitors your internet connectivity.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>NetCheck utilise votre position pour lister les réseaux Wi-Fi environnants (nom et adresse des points d'accès) — requis par macOS.</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>NSSupportsAutomaticGraphicsSwitching</key>
@@ -39,7 +41,7 @@
 	<key>SUFeedURL</key>
 	<string>https://raw.githubusercontent.com/vincentlauriat/NetCheck/main/appcast.xml</string>
 	<key>SUPublicEDKey</key>
-	<string>L4A+SGmQtBLMr+d6XqA/6B9NwY4c89azkDETg5W5xfo=</string>
+	<string>9PD2SBwLL4XoycyAGzaE+gO7ctuxSfuFMMajiZdXhXQ=</string>
 	<key>SUScheduledCheckInterval</key>
 	<integer>86400</integer>
 </dict>

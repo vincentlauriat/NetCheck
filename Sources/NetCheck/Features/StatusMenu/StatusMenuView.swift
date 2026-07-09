@@ -26,6 +26,9 @@ struct StatusMenuView: View {
                 MenuRowButton(icon: "antenna.radiowaves.left.and.right", label: "WiFi Finder") {
                     WindowManager.open(.wifiFinder)
                 }
+                MenuRowButton(icon: "wifi", label: "Diagnostic Wi-Fi") {
+                    WindowManager.open(.wifiScan)
+                }
                 MenuRowButton(icon: "bolt.fill", label: "Speed Test") {
                     WindowManager.open(.speedTest)
                 }

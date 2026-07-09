@@ -9,7 +9,7 @@ NetCheck/
 ├── Sources/
 │   ├── NetCheckCore/          # Network logic — zero UI
 │   │   ├── Monitor/           # ConnectivityMonitor, PingService
-│   │   ├── WiFi/              # WiFiScanner, GeigerSoundEngine, WiFiSignal
+│   │   ├── WiFi/              # WiFiScanner, WiFiNetworkScanner, GeigerSoundEngine, WiFiSignal, WiFiNetworkInfo
 │   │   ├── SpeedTest/         # SpeedTestService, SpeedTestProgress
 │   │   ├── Traceroute/        # TracerouteService, GeoIPService, TracerouteHop
 │   │   └── Usage/             # UsageQualityService, UsageProfile, QualityLevel
@@ -40,6 +40,7 @@ NetCheck/
 | `ip-api.com` for IP geolocation | Free, 45 req/min, no API key |
 | Non-sandboxed | Required for traceroute, CoreWLAN RSSI, networkQuality |
 | Sparkle 2.9.1 | EdDSA signatures, proven in production |
+| CoreLocation authorization for WiFi Diagnostic | macOS only reveals SSID/BSSID of scanned networks (`CWInterface.scanForNetworks`) once Location Services is authorized — without it, same-name access points can't be told apart |
 
 ## Concurrency
 
