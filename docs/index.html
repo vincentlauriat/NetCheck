@@ -96,38 +96,54 @@
   code{background:#060a14;border:1px solid var(--line);border-radius:6px;padding:2px 7px;font:13px/1.4 var(--font-mono);color:var(--accent)}
 
   @media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:30px}.g3,.gallery,.steps{grid-template-columns:1fr}.nav-links a:not(.btn){display:none}}
+
+  .langtog{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;flex:none}
+  .langtog button{background:transparent;border:0;color:var(--muted);font:600 12.5px/1 var(--font-mono);
+    padding:0 10px;min-height:36px;cursor:pointer}
+  .langtog button+button{border-left:1px solid var(--line)}
+  .langtog button:hover{color:var(--txt)}
+  .langtog button.on{background:var(--accent);color:var(--on-accent)}
+  /* En francais les libelles de nav sont plus longs qu'en anglais : sous 600px
+     la barre deborde de quelques pixels. On resserre le selecteur plutot que
+     de raccourcir un libelle correct. */
+  @media(max-width:600px){.langtog button{padding:0 7px;font-size:11.5px}}
 </style>
 </head>
 <body>
-<a class="skip" href="#top">Skip to content</a>
+<a class="skip" href="#top"><span class="en">Skip to content</span><span class="fr">Aller au contenu</span><span class="zh">跳至內容</span></a>
 
 <nav><div class="wrap">
   <a class="brand" href="#top"><span class="logo"><svg width="19" height="19" viewBox="0 0 100 100"><circle cx="50" cy="50" r="26" fill="none" stroke="#fff" stroke-width="6"/><ellipse cx="50" cy="50" rx="26" ry="11" fill="none" stroke="#fff" stroke-width="5"/><line x1="24" y1="50" x2="76" y2="50" stroke="#fff" stroke-width="5"/></svg></span>NetCheck</a>
   <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#screens">Screens</a>
-    <a href="#install">Install</a>
+    <a href="#features"><span class="en">Features</span><span class="fr">Fonctions</span><span class="zh">功能</span></a>
+    <a href="#screens"><span class="en">Screens</span><span class="fr">Aperçu</span><span class="zh">畫面</span></a>
+    <a href="#install"><span class="en">Install</span><span class="fr">Installer</span><span class="zh">安裝</span></a>
     <a href="https://github.com/vincentlauriat/NetCheck">GitHub</a>
-    <a class="btn btn-primary btn-sm" href="https://github.com/vincentlauriat/NetCheck/releases/latest">Download</a>
+    <div class="langtog" role="group" aria-label="Language / Langue / 語言">
+    <button type="button" data-lang="en" class="on" onclick="setLang('en')">EN</button>
+    <button type="button" data-lang="fr" onclick="setLang('fr')">FR</button>
+    <button type="button" data-lang="zh" onclick="setLang('zh')">中文</button>
+  </div>
+    <a class="btn btn-primary btn-sm" href="https://github.com/vincentlauriat/NetCheck/releases/latest"><span class="en">Download</span><span class="fr">Télécharger</span><span class="zh">下載</span></a>
   </div>
 </div></nav>
 
 <header id="top"><div class="wrap">
   <div class="hero-grid">
     <div>
-      <span class="pill"><span class="led"></span> Sits in your menu bar — <b>green when online</b></span>
-      <h1>Your network,<br><span class="grad">at a glance.</span></h1>
-      <p class="sub">A native menu bar app that watches your connection in real time. Click to walk toward your router with sound, run a speed test, trace every hop across a 3D globe, or check what your link can actually handle.</p>
+      <span class="pill"><span class="led"></span> <span class="en">Sits in your menu bar — <b>green when online</b></span><span class="fr">Se loge dans la barre de menus — <b>vert quand tout va bien</b></span><span class="zh">常駐在你的選單列——<b>連線正常時顯示綠色</b></span></span>
+      <h1><span class="en">Your network,<br><span class="grad">at a glance.</span></span><span class="fr">Votre réseau,<br><span class="grad">d'un coup d'œil.</span></span><span class="zh">你的網路，<span class="grad">一眼掌握。</span></span></h1>
+      <p class="sub"><span class="en">A native menu bar app that watches your connection in real time. Click to walk toward your router with sound, run a speed test, trace every hop across a 3D globe, or check what your link can actually handle.</span><span class="fr">Une app native en barre de menus qui surveille votre connexion en temps réel. Cliquez pour marcher vers votre routeur guidé par le son, lancer un test de débit, tracer chaque saut sur un globe 3D, ou voir ce que votre lien encaisse vraiment.</span><span class="zh">原生選單列應用程式，即時監看你的連線。點一下就能靠聲音導引走向路由器、執行速度測試、在 3D 地球上追蹤每一段路由，或看看你的連線實際撐得住什麼。</span></p>
       <div class="cta">
-        <a class="btn btn-primary" href="https://github.com/vincentlauriat/NetCheck/releases/latest">⬇︎ Download for macOS</a>
-        <a class="btn btn-ghost" href="https://github.com/vincentlauriat/NetCheck">View on GitHub</a>
+        <a class="btn btn-primary" href="https://github.com/vincentlauriat/NetCheck/releases/latest">⬇︎ <span class="en">Download for macOS</span><span class="fr">Télécharger pour macOS</span><span class="zh">下載 macOS 版</span></a>
+        <a class="btn btn-ghost" href="https://github.com/vincentlauriat/NetCheck"><span class="en">View on GitHub</span><span class="fr">Voir sur GitHub</span><span class="zh">在 GitHub 上檢視</span></a>
       </div>
       <div class="legend">
-        <span><i style="background:var(--ok);box-shadow:0 0 8px var(--ok)"></i> Online</span>
-        <span><i style="background:var(--warn);box-shadow:0 0 8px var(--warn)"></i> Degraded</span>
-        <span><i style="background:var(--down);box-shadow:0 0 8px var(--down)"></i> Down</span>
+        <span><i style="background:var(--ok);box-shadow:0 0 8px var(--ok)"></i> <span class="en">Online</span><span class="fr">En ligne</span><span class="zh">連線中</span></span>
+        <span><i style="background:var(--warn);box-shadow:0 0 8px var(--warn)"></i> <span class="en">Degraded</span><span class="fr">Dégradé</span><span class="zh">品質下降</span></span>
+        <span><i style="background:var(--down);box-shadow:0 0 8px var(--down)"></i> <span class="en">Down</span><span class="fr">Coupé</span><span class="zh">已斷線</span></span>
       </div>
-      <p class="meta"><b>Free &amp; open-source (MIT)</b> · macOS 26+ · Signed &amp; notarized</p>
+      <p class="meta"><span class="en"><b>Free &amp; open-source (MIT)</b> · macOS 26+ · Signed &amp; notarized</span><span class="fr"><b>Gratuit et open source (MIT)</b> · macOS 26+ · Signé et notarié</span><span class="zh"><b>免費開源（MIT）</b> · macOS 26+ · 已簽章與公證</span></p>
     </div>
     <div class="hero-shot">
       <img src="https://raw.githubusercontent.com/vincentlauriat/NetCheck/main/docs/screenshots/traceroute.png" alt="NetCheck animated 3D-globe traceroute flying from space to each network hop" loading="eager">
@@ -137,74 +153,102 @@
 
 <section id="features"><div class="wrap">
   <div class="center">
-    <p class="eyebrow">features</p>
-    <h2>Four tools, one little globe</h2>
-    <p class="lead">Built on strict Swift 6 concurrency with Apple's own network engine. No sandbox theatre — just accurate, real-time answers.</p>
+    <p class="eyebrow"><span class="en">features</span><span class="fr">fonctions</span><span class="zh">功能</span></p>
+    <h2><span class="en">Four tools, one little globe</span><span class="fr">Quatre outils, un petit globe</span><span class="zh">四個工具，一顆小地球</span></h2>
+    <p class="lead"><span class="en">Built on strict Swift 6 concurrency with Apple's own network engine. No sandbox theatre — just accurate, real-time answers.</span><span class="fr">Bâtie sur la concurrence stricte de Swift 6 et le moteur réseau d'Apple. Pas de théâtre de sandbox — juste des réponses justes, en temps réel.</span><span class="zh">以 Swift 6 嚴格並行模型與 Apple 自家的網路引擎打造。沒有沙箱表演——只有準確的即時答案。</span></p>
   </div>
   <div class="grid g3">
-    <div class="card"><div class="ico">🌐</div><h3>Connectivity globe</h3><p>A green / orange / red globe icon, always visible in the menu bar, reflecting your live connection state.</p></div>
-    <div class="card"><div class="ico">📡</div><h3>WiFi Finder</h3><p>Walk around with a Geiger-counter sound and concentric waves to home in on the strongest spot.</p></div>
-    <div class="card"><div class="ico">⚡</div><h3>Speed Test</h3><p>Download, upload, RPM and latency measured with Apple's <code class="mono">networkQuality</code> engine.</p></div>
-    <div class="card"><div class="ico">🗺️</div><h3>Traceroute</h3><p>An animated 3D globe — the camera flies from space to each hop, then zooms back out.</p></div>
-    <div class="card"><div class="ico">📊</div><h3>Usage Quality</h3><p>A single latency measurement mapped to hierarchical thresholds, from mail to gaming.</p></div>
-    <div class="card"><div class="ico">⚙️</div><h3>Preferences</h3><p>Launch at login via <code class="mono">SMAppService</code>, with Sparkle auto-updates.</p></div>
+    <div class="card"><div class="ico">🌐</div><h3><span class="en">Connectivity globe</span><span class="fr">Globe de connectivité</span><span class="zh">連線狀態地球</span></h3><p><span class="en">A green / orange / red globe icon, always visible in the menu bar, reflecting your live connection state.</span><span class="fr">Une icône de globe verte / orange / rouge, toujours visible dans la barre de menus, qui reflète l'état de votre connexion en direct.</span><span class="zh">綠／橙／紅三色的地球圖示，始終顯示在選單列，反映你當下的連線狀態。</span></p></div>
+    <div class="card"><div class="ico">📡</div><h3><span class="en">WiFi Finder</span><span class="fr">WiFi Finder</span><span class="zh">WiFi 尋訊器</span></h3><p><span class="en">Walk around with a Geiger-counter sound and concentric waves to home in on the strongest spot.</span><span class="fr">Déplacez-vous, guidé par un son de compteur Geiger et des ondes concentriques, pour trouver le meilleur endroit.</span><span class="zh">一邊走動，一邊靠蓋革計數器般的聲音與同心波紋，找出訊號最強的位置。</span></p></div>
+    <div class="card"><div class="ico">⚡</div><h3><span class="en">Speed Test</span><span class="fr">Test de débit</span><span class="zh">速度測試</span></h3><p><span class="en">Download, upload, RPM and latency measured with Apple's <code class="mono">networkQuality</code> engine.</span><span class="fr">Débit descendant, montant, RPM et latence mesurés avec le moteur <code class="mono">networkQuality</code> d'Apple.</span><span class="zh">以 Apple 的 <code class="mono">networkQuality</code> 引擎量測下行、上行、RPM 與延遲。</span></p></div>
+    <div class="card"><div class="ico">🗺️</div><h3><span class="en">Traceroute</span><span class="fr">Traceroute</span><span class="zh">路由追蹤</span></h3><p><span class="en">An animated 3D globe — the camera flies from space to each hop, then zooms back out.</span><span class="fr">Un globe 3D animé — la caméra descend de l'espace vers chaque saut, puis remonte.</span><span class="zh">動態 3D 地球——鏡頭從太空飛向每一個節點，再拉遠。</span></p></div>
+    <div class="card"><div class="ico">📊</div><h3><span class="en">Usage Quality</span><span class="fr">Qualité par usage</span><span class="zh">用途品質</span></h3><p><span class="en">A single latency measurement mapped to hierarchical thresholds, from mail to gaming.</span><span class="fr">Une seule mesure de latence rapportée à des seuils hiérarchisés, du mail au jeu.</span><span class="zh">以單次延遲量測對應到分層門檻，從收信到玩遊戲都涵蓋。</span></p></div>
+    <div class="card"><div class="ico">⚙️</div><h3><span class="en">Preferences</span><span class="fr">Préférences</span><span class="zh">偏好設定</span></h3><p><span class="en">Launch at login via <code class="mono">SMAppService</code>, with Sparkle auto-updates.</span><span class="fr">Lancement à l'ouverture de session via <code class="mono">SMAppService</code>, avec mises à jour automatiques Sparkle.</span><span class="zh">透過 <code class="mono">SMAppService</code> 開機時啟動，並以 Sparkle 自動更新。</span></p></div>
   </div>
 </div></section>
 
 <section id="screens"><div class="wrap">
   <div class="center">
-    <p class="eyebrow">a look inside</p>
-    <h2>See it work</h2>
-    <p class="lead">Liquid-Glass panels, organic bubbles and a globe that actually flies. Here's each tool in action.</p>
+    <p class="eyebrow"><span class="en">a look inside</span><span class="fr">un aperçu</span><span class="zh">內部一覽</span></p>
+    <h2><span class="en">See it work</span><span class="fr">Le voir tourner</span><span class="zh">實際運作</span></h2>
+    <p class="lead"><span class="en">Liquid-Glass panels, organic bubbles and a globe that actually flies. Here's each tool in action.</span><span class="fr">Panneaux Liquid Glass, bulles organiques et un globe qui vole vraiment. Voici chaque outil en action.</span><span class="zh">Liquid Glass 面板、有機感的氣泡，以及一顆真的會飛的地球。以下是每個工具的實際運作。</span></p>
   </div>
   <div class="gallery">
     <figure>
       <img src="https://raw.githubusercontent.com/vincentlauriat/NetCheck/main/docs/screenshots/wifi-finder.png" alt="NetCheck WiFi Finder with concentric waves" loading="lazy">
-      <figcaption><b>WiFi Finder</b> — a Geiger-counter sound guides you to the strongest WiFi spot.</figcaption>
+      <figcaption><span class="en"><b>WiFi Finder</b> — a Geiger-counter sound guides you to the strongest WiFi spot.</span><span class="fr"><b>WiFi Finder</b> — un son de compteur Geiger vous guide vers le meilleur point WiFi.</span><span class="zh"><b>WiFi 尋訊器</b> — 蓋革計數器般的聲音帶你找到訊號最強的位置。</span></figcaption>
     </figure>
     <figure>
       <img src="https://raw.githubusercontent.com/vincentlauriat/NetCheck/main/docs/screenshots/speed-test.png" alt="NetCheck Speed Test results" loading="lazy">
-      <figcaption><b>Speed Test</b> — download, upload, RPM and ping latency via Apple's engine.</figcaption>
+      <figcaption><span class="en"><b>Speed Test</b> — download, upload, RPM and ping latency via Apple's engine.</span><span class="fr"><b>Test de débit</b> — descendant, montant, RPM et latence de ping via le moteur d'Apple.</span><span class="zh"><b>速度測試</b> — 透過 Apple 的引擎量測下行、上行、RPM 與 ping 延遲。</span></figcaption>
     </figure>
     <figure>
       <img src="https://raw.githubusercontent.com/vincentlauriat/NetCheck/main/docs/screenshots/traceroute.png" alt="NetCheck 3D-globe traceroute" loading="lazy">
-      <figcaption><b>Traceroute</b> — the camera flies to each hop on an animated 3D globe, then zooms out.</figcaption>
+      <figcaption><span class="en"><b>Traceroute</b> — the camera flies to each hop on an animated 3D globe, then zooms out.</span><span class="fr"><b>Traceroute</b> — la caméra vole vers chaque saut sur un globe 3D animé, puis prend du recul.</span><span class="zh"><b>路由追蹤</b> — 鏡頭在動態 3D 地球上飛向每一個節點，再拉遠。</span></figcaption>
     </figure>
     <figure>
       <img src="https://raw.githubusercontent.com/vincentlauriat/NetCheck/main/docs/screenshots/usage.png" alt="NetCheck Usage Quality ratings" loading="lazy">
-      <figcaption><b>Usage Quality</b> — one latency reading mapped to thresholds per use case.</figcaption>
+      <figcaption><span class="en"><b>Usage Quality</b> — one latency reading mapped to thresholds per use case.</span><span class="fr"><b>Qualité par usage</b> — une mesure de latence rapportée à des seuils par cas d'usage.</span><span class="zh"><b>用途品質</b> — 以單次延遲讀數對應到各使用情境的門檻。</span></figcaption>
     </figure>
   </div>
 </div></section>
 
 <section id="install"><div class="wrap">
   <div class="center">
-    <p class="eyebrow">get started</p>
-    <h2>Up and running in 30 seconds</h2>
-    <p class="lead">Signed, notarized and Hardened-Runtime — it opens without any Gatekeeper warning.</p>
+    <p class="eyebrow"><span class="en">get started</span><span class="fr">démarrer</span><span class="zh">開始使用</span></p>
+    <h2><span class="en">Up and running in 30 seconds</span><span class="fr">Opérationnel en 30 secondes</span><span class="zh">30 秒內開始使用</span></h2>
+    <p class="lead"><span class="en">Signed, notarized and Hardened-Runtime — it opens without any Gatekeeper warning.</span><span class="fr">Signée, notariée et en Hardened Runtime — elle s'ouvre sans aucun avertissement Gatekeeper.</span><span class="zh">已簽章、已公證並啟用 Hardened Runtime——開啟時不會出現任何 Gatekeeper 警告。</span></p>
   </div>
   <div class="steps">
-    <div class="step"><h3>Download</h3><p>Grab the latest <code>.dmg</code> from GitHub Releases and mount it.</p></div>
-    <div class="step"><h3>Install</h3><p>Drag <code>NetCheck.app</code> into <code>/Applications</code>.</p></div>
-    <div class="step"><h3>Launch</h3><p>Open it — the globe lands in your menu bar. Requires macOS 26 or later.</p></div>
+    <div class="step"><h3><span class="en">Download</span><span class="fr">Télécharger</span><span class="zh">下載</span></h3><p><span class="en">Grab the latest <code>.dmg</code> from GitHub Releases and mount it.</span><span class="fr">Récupérez le dernier <code>.dmg</code> depuis GitHub Releases et montez-le.</span><span class="zh">從 GitHub Releases 取得最新的 <code>.dmg</code> 並掛載。</span></p></div>
+    <div class="step"><h3><span class="en">Install</span><span class="fr">Installer</span><span class="zh">安裝</span></h3><p><span class="en">Drag <code>NetCheck.app</code> into <code>/Applications</code>.</span><span class="fr">Glissez <code>NetCheck.app</code> dans <code>/Applications</code>.</span><span class="zh">將 <code>NetCheck.app</code> 拖入 <code>/Applications</code>。</span></p></div>
+    <div class="step"><h3><span class="en">Launch</span><span class="fr">Lancer</span><span class="zh">啟動</span></h3><p><span class="en">Open it — the globe lands in your menu bar. Requires macOS 26 or later.</span><span class="fr">Ouvrez-la — le globe apparaît dans la barre de menus. Nécessite macOS 26 ou ultérieur.</span><span class="zh">開啟它——地球圖示會出現在選單列。需要 macOS 26 或以上版本。</span></p></div>
   </div>
 </div></section>
 
 <section class="final"><div class="wrap">
-  <p class="eyebrow">ready?</p>
-  <h2>Never wonder if it's the WiFi again</h2>
-  <p class="lead" style="margin:0 auto 6px">Free, open-source and native. macOS 26 or later.</p>
+  <p class="eyebrow"><span class="en">ready?</span><span class="fr">prêt ?</span><span class="zh">準備好了嗎？</span></p>
+  <h2><span class="en">Never wonder if it's the WiFi again</span><span class="fr">Ne vous demandez plus si c'est le WiFi</span><span class="zh">別再猜是不是 WiFi 的問題</span></h2>
+  <p class="lead" style="margin:0 auto 6px"><span class="en">Free, open-source and native. macOS 26 or later.</span><span class="fr">Gratuite, open source et native. macOS 26 ou ultérieur.</span><span class="zh">免費、開源、原生。macOS 26 或以上版本。</span></p>
   <div class="cta">
-    <a class="btn btn-primary" href="https://github.com/vincentlauriat/NetCheck/releases/latest">⬇︎ Download for macOS</a>
-    <a class="btn btn-ghost" href="https://github.com/vincentlauriat/NetCheck#readme">Read the docs</a>
+    <a class="btn btn-primary" href="https://github.com/vincentlauriat/NetCheck/releases/latest">⬇︎ <span class="en">Download for macOS</span><span class="fr">Télécharger pour macOS</span><span class="zh">下載 macOS 版</span></a>
+    <a class="btn btn-ghost" href="https://github.com/vincentlauriat/NetCheck#readme"><span class="en">Read the docs</span><span class="fr">Lire la doc</span><span class="zh">閱讀說明文件</span></a>
   </div>
 </div></section>
 
 <footer><div class="wrap">
-  NetCheck · MIT License · © 2026 Vincent Lauriat ·
+  NetCheck · <span class="en">MIT License</span><span class="fr">Licence MIT</span><span class="zh">MIT 授權</span> · © 2026 Vincent Lauriat ·
   <a href="https://github.com/vincentlauriat/NetCheck">github.com/vincentlauriat/NetCheck</a>
   · <a href="https://lauriat.fr/outils/netcheck/">lauriat.fr</a>
 </div></footer>
 
+<script>
+  /* zh-Hant et non zh : sur un système configuré en chinois simplifié, un
+     simple `zh` laisse le navigateur choisir une fonte Han simplifiée, qui
+     rend certains caractères traditionnels dans la mauvaise forme. */
+  var LANG_TAG={en:'en',fr:'fr',zh:'zh-Hant'};
+  function setLang(l){
+    if(!LANG_TAG[l]) l='en';
+    document.body.classList.remove('lang-en','lang-fr','lang-zh');
+    document.body.classList.add('lang-'+l);
+    document.documentElement.lang=LANG_TAG[l];
+    /* On boucle sur les boutons au lieu de les nommer un par un : ajouter une
+       4e langue ne demandera alors aucune retouche de ce script. */
+    document.querySelectorAll('.langtog button').forEach(function(b){
+      var on=b.dataset.lang===l;
+      b.classList.toggle('on',on);
+      b.setAttribute('aria-pressed',on?'true':'false');
+    });
+    try{localStorage.setItem('vl-lang',l)}catch(e){}
+  }
+  (function(){
+    var saved;try{saved=localStorage.getItem('vl-lang')}catch(e){}
+    var n=(navigator.language||'en').slice(0,2).toLowerCase();
+    /* Le traditionnel est servi a tout visiteur sinophone, y compris zh-CN :
+       c'est la seule variante chinoise disponible, et la renvoyer vaut mieux
+       que de rabattre ce visiteur sur l'anglais. */
+    setLang(saved||(n==='zh'?'zh':(n==='fr'?'fr':'en')));
+  })();
+</script>
 </body>
 </html>
