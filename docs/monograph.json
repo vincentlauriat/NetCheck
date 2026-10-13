@@ -1,0 +1,313 @@
+{
+  "name": "NetCheck",
+  "no": "17",
+  "repo": "vincentlauriat/NetCheck",
+  "url": "https://vincentlauriat.github.io/NetCheck/",
+  "accent": "#818cf8",
+  "meta": {
+    "title": "NetCheck — Monitor your network in real time, from the menu bar",
+    "description": "A native macOS menu bar app to monitor your network in real time: connectivity indicator, sound-guided WiFi finder, speed test via Apple's networkQuality, an animated 3D-globe traceroute, and per-use connection scoring. Free & open-source (MIT).",
+    "favicon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%233b82f6'/%3E%3Ccircle cx='50' cy='50' r='26' fill='none' stroke='white' stroke-width='5'/%3E%3Cellipse cx='50' cy='50' rx='26' ry='11' fill='none' stroke='white' stroke-width='4'/%3E%3Cline x1='24' y1='50' x2='76' y2='50' stroke='white' stroke-width='4'/%3E%3C/svg%3E",
+    "og_image": "https://raw.githubusercontent.com/vincentlauriat/NetCheck/main/docs/screenshots/traceroute.png"
+  },
+  "role": {
+    "en": "Sits in your menu bar — green when online",
+    "fr": "Se loge dans la barre de menus — vert quand tout va bien",
+    "zh": "常駐在你的選單列——連線正常時顯示綠色"
+  },
+  "thesis": {
+    "en": "Your network, at a glance.",
+    "fr": "Votre réseau, d'un coup d'œil.",
+    "zh": "你的網路，一眼掌握。"
+  },
+  "lede": {
+    "en": "A native menu bar app that watches your connection in real time. Click to walk toward your router with sound, run a speed test, trace every hop across a 3D globe, or check what your link can actually handle.",
+    "fr": "Une app native en barre de menus qui surveille votre connexion en temps réel. Cliquez pour marcher vers votre routeur guidé par le son, lancer un test de débit, tracer chaque saut sur un globe 3D, ou voir ce que votre lien encaisse vraiment.",
+    "zh": "原生選單列應用程式，即時監看你的連線。點一下就能靠聲音導引走向路由器、執行速度測試、在 3D 地球上追蹤每一段路由，或看看你的連線實際撐得住什麼。"
+  },
+  "actions": [
+    {
+      "primary": true,
+      "href": "https://github.com/vincentlauriat/NetCheck/releases/latest",
+      "label": {
+        "en": "Download for macOS",
+        "fr": "Télécharger pour macOS",
+        "zh": "下載 macOS 版"
+      }
+    },
+    {
+      "href": "https://github.com/vincentlauriat/NetCheck",
+      "label": {
+        "en": "View on GitHub",
+        "fr": "Voir sur GitHub",
+        "zh": "在 GitHub 上檢視"
+      }
+    }
+  ],
+  "facts": [
+    {
+      "k": {
+        "en": "Requires",
+        "fr": "Configuration",
+        "zh": "系統需求"
+      },
+      "v": "macOS 26+"
+    },
+    {
+      "k": {
+        "en": "Distribution",
+        "fr": "Distribution",
+        "zh": "發行"
+      },
+      "v": {
+        "en": "Signed &amp; notarized",
+        "fr": "Signé et notarié",
+        "zh": "已簽章與公證"
+      }
+    },
+    {
+      "k": {
+        "en": "Licence",
+        "fr": "Licence",
+        "zh": "授權"
+      },
+      "v": {
+        "en": "Free &amp; open-source (MIT)",
+        "fr": "Gratuit et open source (MIT)",
+        "zh": "免費開源（MIT）"
+      }
+    }
+  ],
+  "hero": {
+    "src": "screenshots/traceroute.png",
+    "w": 1000,
+    "h": 904,
+    "dark": true,
+    "alt": "NetCheck animated 3D-globe traceroute flying from space to each network hop",
+    "caption": {
+      "en": "<b>Traceroute</b> — the camera flies to each hop on an animated 3D globe, then zooms out.",
+      "fr": "<b>Traceroute</b> — la caméra vole vers chaque saut sur un globe 3D animé, puis prend du recul.",
+      "zh": "<b>路由追蹤</b> — 鏡頭在動態 3D 地球上飛向每一個節點，再拉遠。"
+    }
+  },
+  "opener": {
+    "h": {
+      "en": "Four tools, one little globe",
+      "fr": "Quatre outils, un petit globe",
+      "zh": "四個工具，一顆小地球"
+    },
+    "p": {
+      "en": "Built on strict Swift 6 concurrency with Apple's own network engine. No sandbox theatre — just accurate, real-time answers.",
+      "fr": "Bâtie sur la concurrence stricte de Swift 6 et le moteur réseau d'Apple. Pas de théâtre de sandbox — juste des réponses justes, en temps réel.",
+      "zh": "以 Swift 6 嚴格並行模型與 Apple 自家的網路引擎打造。沒有沙箱表演——只有準確的即時答案。"
+    }
+  },
+  "features": [
+    {
+      "h": {
+        "en": "Connectivity globe",
+        "fr": "Globe de connectivité",
+        "zh": "連線狀態地球"
+      },
+      "p": {
+        "en": "A green / orange / red globe icon, always visible in the menu bar, reflecting your live connection state.",
+        "fr": "Une icône de globe verte / orange / rouge, toujours visible dans la barre de menus, qui reflète l'état de votre connexion en direct.",
+        "zh": "綠／橙／紅三色的地球圖示，始終顯示在選單列，反映你當下的連線狀態。"
+      }
+    },
+    {
+      "h": {
+        "en": "WiFi Finder",
+        "fr": "WiFi Finder",
+        "zh": "WiFi 尋訊器"
+      },
+      "p": {
+        "en": "Walk around with a Geiger-counter sound and concentric waves to home in on the strongest spot.",
+        "fr": "Déplacez-vous, guidé par un son de compteur Geiger et des ondes concentriques, pour trouver le meilleur endroit.",
+        "zh": "一邊走動，一邊靠蓋革計數器般的聲音與同心波紋，找出訊號最強的位置。"
+      }
+    },
+    {
+      "h": {
+        "en": "Speed Test",
+        "fr": "Test de débit",
+        "zh": "速度測試"
+      },
+      "p": {
+        "en": "Download, upload, RPM and latency measured with Apple's <code>networkQuality</code> engine.",
+        "fr": "Débit descendant, montant, RPM et latence mesurés avec le moteur <code>networkQuality</code> d'Apple.",
+        "zh": "以 Apple 的 <code>networkQuality</code> 引擎量測下行、上行、RPM 與延遲。"
+      }
+    },
+    {
+      "h": {
+        "en": "Traceroute",
+        "fr": "Traceroute",
+        "zh": "路由追蹤"
+      },
+      "p": {
+        "en": "An animated 3D globe — the camera flies from space to each hop, then zooms back out.",
+        "fr": "Un globe 3D animé — la caméra descend de l'espace vers chaque saut, puis remonte.",
+        "zh": "動態 3D 地球——鏡頭從太空飛向每一個節點，再拉遠。"
+      }
+    },
+    {
+      "h": {
+        "en": "Usage Quality",
+        "fr": "Qualité par usage",
+        "zh": "用途品質"
+      },
+      "p": {
+        "en": "A single latency measurement mapped to hierarchical thresholds, from mail to gaming.",
+        "fr": "Une seule mesure de latence rapportée à des seuils hiérarchisés, du mail au jeu.",
+        "zh": "以單次延遲量測對應到分層門檻，從收信到玩遊戲都涵蓋。"
+      }
+    },
+    {
+      "h": {
+        "en": "Preferences",
+        "fr": "Préférences",
+        "zh": "偏好設定"
+      },
+      "p": {
+        "en": "Launch at login via <code>SMAppService</code>, with Sparkle auto-updates.",
+        "fr": "Lancement à l'ouverture de session via <code>SMAppService</code>, avec mises à jour automatiques Sparkle.",
+        "zh": "透過 <code>SMAppService</code> 開機時啟動，並以 Sparkle 自動更新。"
+      }
+    }
+  ],
+  "chapters": [
+    {
+      "id": "screens",
+      "h": {
+        "en": "See it work",
+        "fr": "Le voir tourner",
+        "zh": "實際運作"
+      },
+      "p": {
+        "en": "Liquid-Glass panels, organic bubbles and a globe that actually flies. Here's each tool in action.",
+        "fr": "Panneaux Liquid Glass, bulles organiques et un globe qui vole vraiment. Voici chaque outil en action.",
+        "zh": "Liquid Glass 面板、有機感的氣泡，以及一顆真的會飛的地球。以下是每個工具的實際運作。"
+      },
+      "blocks": [
+        {
+          "type": "plates",
+          "items": [
+            {
+              "src": "screenshots/wifi-finder.png",
+              "w": 960,
+              "h": 1014,
+              "dark": true,
+              "alt": "NetCheck WiFi Finder with concentric waves",
+              "caption": {
+                "en": "<b>WiFi Finder</b> — a Geiger-counter sound guides you to the strongest WiFi spot.",
+                "fr": "<b>WiFi Finder</b> — un son de compteur Geiger vous guide vers le meilleur point WiFi.",
+                "zh": "<b>WiFi 尋訊器</b> — 蓋革計數器般的聲音帶你找到訊號最強的位置。"
+              }
+            },
+            {
+              "src": "screenshots/speed-test.png",
+              "w": 760,
+              "h": 916,
+              "dark": true,
+              "alt": "NetCheck Speed Test results",
+              "caption": {
+                "en": "<b>Speed Test</b> — download, upload, RPM and ping latency via Apple's engine.",
+                "fr": "<b>Test de débit</b> — descendant, montant, RPM et latence de ping via le moteur d'Apple.",
+                "zh": "<b>速度測試</b> — 透過 Apple 的引擎量測下行、上行、RPM 與 ping 延遲。"
+              }
+            },
+            {
+              "src": "screenshots/usage.png",
+              "w": 1360,
+              "h": 800,
+              "dark": true,
+              "wide": true,
+              "alt": "NetCheck Usage Quality ratings",
+              "caption": {
+                "en": "<b>Usage Quality</b> — one latency reading mapped to thresholds per use case.",
+                "fr": "<b>Qualité par usage</b> — une mesure de latence rapportée à des seuils par cas d'usage.",
+                "zh": "<b>用途品質</b> — 以單次延遲讀數對應到各使用情境的門檻。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "install",
+      "h": {
+        "en": "Up and running in 30 seconds",
+        "fr": "Opérationnel en 30 secondes",
+        "zh": "30 秒內開始使用"
+      },
+      "p": {
+        "en": "Signed, notarized and Hardened-Runtime — it opens without any Gatekeeper warning.",
+        "fr": "Signée, notariée et en Hardened Runtime — elle s'ouvre sans aucun avertissement Gatekeeper.",
+        "zh": "已簽章、已公證並啟用 Hardened Runtime——開啟時不會出現任何 Gatekeeper 警告。"
+      },
+      "blocks": [
+        {
+          "type": "steps",
+          "items": [
+            {
+              "en": "<b>Download.</b> Grab the latest <code>.dmg</code> from GitHub Releases and mount it.",
+              "fr": "<b>Télécharger.</b> Récupérez le dernier <code>.dmg</code> depuis GitHub Releases et montez-le.",
+              "zh": "<b>下載。</b> 從 GitHub Releases 取得最新的 <code>.dmg</code> 並掛載。"
+            },
+            {
+              "en": "<b>Install.</b> Drag <code>NetCheck.app</code> into <code>/Applications</code>.",
+              "fr": "<b>Installer.</b> Glissez <code>NetCheck.app</code> dans <code>/Applications</code>.",
+              "zh": "<b>安裝。</b> 將 <code>NetCheck.app</code> 拖入 <code>/Applications</code>。"
+            },
+            {
+              "en": "<b>Launch.</b> Open it — the globe lands in your menu bar. Requires macOS 26 or later.",
+              "fr": "<b>Lancer.</b> Ouvrez-la — le globe apparaît dans la barre de menus. Nécessite macOS 26 ou ultérieur.",
+              "zh": "<b>啟動。</b> 開啟它——地球圖示會出現在選單列。需要 macOS 26 或以上版本。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "close": {
+    "h": {
+      "en": "Never wonder if it's the WiFi again",
+      "fr": "Ne vous demandez plus si c'est le WiFi",
+      "zh": "別再猜是不是 WiFi 的問題"
+    },
+    "p": {
+      "en": "Free, open-source and native. macOS 26 or later.",
+      "fr": "Gratuite, open source et native. macOS 26 ou ultérieur.",
+      "zh": "免費、開源、原生。macOS 26 或以上版本。"
+    },
+    "actions": [
+      {
+        "primary": true,
+        "href": "https://github.com/vincentlauriat/NetCheck/releases/latest",
+        "label": {
+          "en": "Download for macOS",
+          "fr": "Télécharger pour macOS",
+          "zh": "下載 macOS 版"
+        }
+      },
+      {
+        "href": "https://github.com/vincentlauriat/NetCheck#readme",
+        "label": {
+          "en": "Read the docs",
+          "fr": "Lire la doc",
+          "zh": "閱讀說明文件"
+        }
+      }
+    ]
+  },
+  "colophon": {
+    "notes": [
+      {
+        "en": "Also at <a href=\"https://lauriat.fr/outils/netcheck/\">lauriat.fr</a>.",
+        "fr": "Aussi sur <a href=\"https://lauriat.fr/outils/netcheck/\">lauriat.fr</a>.",
+        "zh": "另見 <a href=\"https://lauriat.fr/outils/netcheck/\">lauriat.fr</a>。"
+      }
+    ]
+  }
+}
