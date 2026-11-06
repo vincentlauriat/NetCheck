@@ -10,8 +10,13 @@ public actor WiFiNetworkScanner {
         case scanFailed(String)
 
         public var errorDescription: String? {
+            localizedDescription(locale: .current)
+        }
+
+        public func localizedDescription(locale: Locale) -> String {
             switch self {
-            case .interfaceUnavailable: return "Interface Wi-Fi indisponible."
+            case .interfaceUnavailable:
+                return CoreLocalization.string("Wi-Fi interface unavailable.", locale: locale)
             case .scanFailed(let message): return message
             }
         }
@@ -55,7 +60,7 @@ public actor WiFiNetworkScanner {
 
     private static func bandLabel(_ band: CWChannelBand?) -> String? {
         switch band {
-        case .band2GHz: return "2,4 GHz"
+        case .band2GHz: return "2.4 GHz"
         case .band5GHz: return "5 GHz"
         case .band6GHz: return "6 GHz"
         default:        return nil
